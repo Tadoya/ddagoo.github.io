@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://tadoya.github.io/sitemap.xml

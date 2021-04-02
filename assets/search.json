@@ -1,0 +1,39 @@
+---
+permalink: search.json
+---
+[
+  {% for post in site.frontend %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  },
+  {% endfor %}
+
+  {% for post in site.backend %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  },
+  {% endfor %}
+
+  {% for post in site.database %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  },
+  {% endfor %}
+
+  {% for post in site.devops %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  },
+  {% endfor %}
+
+  {% for post in site.etc %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

@@ -1,0 +1,18 @@
+---
+title: Database
+layout: default
+sectionid: database
+permalink: allposts/database.html
+---
+
+
+<div class="container">
+    <div class="inner-content">
+        <h1>All Posts</h1> {% for page in site.database %}
+        <p>
+            <strong><a href="{{ page.url | relative_url }}">{{ page.title }}</a></strong>
+            <span>on {{ page.date | date: "%B %e, %Y" }} {% if page.author %} by {{ page.author }}{% endif %}</span>
+        </p>
+        {% endfor %}
+    </div>
+</div>

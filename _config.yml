@@ -1,0 +1,97 @@
+# Site settings
+title: 타도야 노트
+email: whitemos@naver.com
+description: >
+  웹 개발 관련
+lang: ko-KR
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: https://tadoya.github.io/ # the base hostname & protocol for your site
+git_address: https://github.com/Tadoya
+git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+
+# theme options from https://bootswatch.com/3/
+# comment out this to use default Bootstrap
+bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+# Plugins (previously gems:)
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+timezone: Asia/Seoul
+defaults:
+- scope:
+    path: _frontend
+    type: posts
+  values:
+    layout: frontend
+    sectionid: frontend
+
+- scope:
+    path: _backend
+    type: posts
+  values:
+    layout: backend
+    sectionid: backend
+
+- scope:
+    path: _database
+    type: posts
+  values:
+    layout: database
+    sectionid: database
+    
+- scope:
+    path: _devops
+    type: posts
+  values:
+    layout: devops
+    sectionid: devops
+
+- scope:
+    path: _etc
+    type: posts
+  values:
+    layout: etc
+    sectionid: etc
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  frontend:
+    permalink: /frontend/:year/:month/:day/:title/
+    output: true
+  backend:
+    permalink: /backend/:year/:month/:day/:title/
+    output: true
+  database:
+    permalink: /database/:year/:month/:day/:title/
+    output: true
+  devops:
+    permalink: /devops/:year/:month/:day/:title/
+    output: true
+  etc:
+    permalink: /etc/:year/:month/:day/:title/
+    output: true
